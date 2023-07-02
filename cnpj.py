@@ -18,8 +18,8 @@ class CNPJ:
         self.json_data.update(json_data)
 
     def structure_and_treatment(self):
-        print('ESTRUTURANDO DADOS')
-        print(self.json_data)
+        print('_____Estruturando dados_____')
+
         cnpj =                   self.json_data['cnpj']
         nome_fantasia =          self.json_data['nome_fantasia']
         estado =                 self.json_data['uf']
@@ -42,8 +42,6 @@ class CNPJ:
             atividades_secundarias = atividade['descricao']
             self.data_formated.append({'atividade_secundaria':atividades_secundarias})
         
-        # return self.data_formated
-
     def create_dataframe(self):
         df = pd.DataFrame(self.data_formated)
         print(df)
